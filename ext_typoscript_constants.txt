@@ -1,0 +1,11 @@
+plugin.tx_sramedia_pi1 {
+  # cat=plugin.tx_sramedia_pi1/file; type=file[html,htm,tmpl,txt]; label= Template File: HTML-template file for display of books. See EXT:sra_media/pi1/doc_template.tmpl for an example
+  file.templateFile = EXT:sra_media/pi1/doc_template.tmpl
+  
+  # cat=plugin.tx_sramedia_pi1//; type=int+; label= "Single" pid: The PID of the page on which single books should be displayed
+  PIDitemDisplay = 0
+  
+  # cat=plugin.tx_sramedia_pi1//; type=int+; label= "FE-user" pid: The PID of the page holding the FE user list plugin (for displaying user details)
+  PIDFEuser = 0
+  email = 
+}

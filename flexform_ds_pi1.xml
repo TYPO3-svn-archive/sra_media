@@ -1,0 +1,100 @@
+<T3DataStructure>
+ <meta>
+       <langDisable>1</langDisable>
+ </meta>
+ <sheets>
+  <sDEF>
+   <ROOT>
+    <TCEforms>
+     <sheetTitle>LLL:EXT:sra_media/locallang_db.xml:pi_flexform.sheet_general</sheetTitle>
+    </TCEforms>
+    <type>array</type>
+     <el>
+      <pages>
+       <TCEforms>
+        <exclude>1</exclude>
+        <label>LLL:EXT:lang/locallang_general.php:LGL.startingpoint</label>
+        <config>
+         <type>group</type>
+         <internal_type>db</internal_type>
+         <allowed>pages</allowed>
+         <size>3</size>
+         <maxitems>22</maxitems>
+         <minitems>0</minitems>
+         <show_thumbs>1</show_thumbs>
+        </config>
+       </TCEforms>
+      </pages>
+      <view_mode>
+	<TCEforms>
+	 <label>LLL:EXT:sra_media/locallang_db.xml:pi_flexform.view_mode</label>
+	 <config>
+	  <type>select</type>
+	  <items type="array">
+	   <numIndex index="1" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.listview</numIndex>
+	    <numIndex index="1">LISTVIEW</numIndex>
+	    </numIndex>
+	   <numIndex index="2" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.alluserconferred</numIndex>
+	    <numIndex index="1">ALLUSERCONFERRED</numIndex>
+	    </numIndex>
+	   <numIndex index="3" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.searchform</numIndex>
+	    <numIndex index="1">SEARCHFORM</numIndex>
+	   </numIndex>
+	   <numIndex index="4" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.addform</numIndex>
+	    <numIndex index="1">ADDFORM</numIndex>
+	   </numIndex>
+	   <numIndex index="5" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.addform_staff</numIndex>
+	    <numIndex index="1">ADDFORMSTAFF</numIndex>
+	   </numIndex>
+	   <numIndex index="6" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.singleview</numIndex>
+	    <numIndex index="1">SINGLEVIEW</numIndex>
+	   </numIndex>
+	   <numIndex index="7" type="array">
+	    <numIndex index="0">LLL:EXT:sra_media/locallang_db.xml:pi_flexform.user_conferred</numIndex>
+	    <numIndex index="1">USER_CONFERRED</numIndex>
+	   </numIndex>
+
+	  </items>
+	  <maxitems>1</maxitems>
+	  <minitems>1</minitems>
+	  <size>1</size>
+	  <multiple>0</multiple>
+	 </config>
+	</TCEforms>
+      </view_mode>
+     </el>
+    </ROOT>
+   </sDEF>
+   <sheet_other>
+    <ROOT>
+     <TCEforms>
+      <sheetTitle>LLL:EXT:sra_media/locallang_db.xml:pi_flexform.sheet_other</sheetTitle>
+     </TCEforms>
+     <type>array</type>
+     <el>
+      <single_pid>
+       <TCEforms>
+        <label>LLL:EXT:sra_media/locallang_db.xml:pi_flexform.choose_singlepage</label>
+        <config>
+         <type>group</type>
+	 <internal_type>db</internal_type> 
+	 <allowed>pages</allowed>
+	 <multiple>0</multiple>
+	 <minitems>0</minitems>
+	 <maxitems>1</maxitems>
+	 <size>1</size>
+        </config>
+       </TCEforms>
+      </single_pid>
+     </el>
+    </ROOT>
+   </sheet_other>
+
+  </sheets>
+</T3DataStructure>

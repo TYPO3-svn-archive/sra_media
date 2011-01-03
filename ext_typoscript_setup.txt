@@ -1,0 +1,50 @@
+includeLibs.ts_sra_media = EXT:sra_media/pi1/class.tx_sramedia_pi1.php
+
+
+plugin.tx_sramedia_pi1 >
+plugin.tx_sramedia_pi1 = USER
+plugin.tx_sramedia_pi1 {
+  userFunc = tx_sramedia_pi1->main
+
+  templateFile = {$plugin.tx_sramedia_pi1.file.templateFile}
+  pid_list.field = pages
+  recursive.field = recursive
+  code.field = select_key
+  orderby = signature asc
+
+  # Rendering of items
+  general_stdWrap {
+    brTag = <BR>
+    parseFunc < styles.content.parseFunc
+  }
+
+  limit = 10
+  PIDitemDisplay = {$plugin.tx_sramedia_pi1.PIDitemDisplay}
+  PIDFEuser = {$plugin.tx_sramedia_pi1.PIDFEuser}
+  pageTypoLink.parameter.current = 1
+
+  # SINGLE news
+  displaySingle {
+    title_stdWrap.wrap = |
+	date_stdWrap.strftime= %d. %b. %Y
+	pubdate_stdWrap.strftime= %d. %b. %Y
+	list_stdWrap.wrap = <b>|</b>
+  }
+
+  # LIST news
+  displayList {
+  	date_stdWrap.strftime= %d. %b. %Y
+	pubdate_stdWrap.strftime= %d. %b. %Y
+	OK_stdWrap.wrap = <font color="#008000"><b>|</b></font>
+	reminded_stdWrap.wrap = <font color="#B7BB06"><b>|</b></font>
+	overdue_stdWrap.wrap = <font color="#ffff00"><b>|</b></font>
+  }
+
+  # Secretary E-Mail 
+  email = {$plugin.tx_sramedia_pi1.email}
+}
+
+## This enables the tt_content.record item to display news items:
+tx_sramedia_pi1_pi1 >
+tx_sramedia_pi1 = < plugin.tx_sramedia_pi1
+tx_sramedia_pi1.displayCurrentRecord = 1

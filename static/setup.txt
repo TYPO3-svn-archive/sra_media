@@ -1,0 +1,2 @@
+page.includeJS.sramedia_functions = EXT:sra_media/res/scripts/functions.js
+page.includeCSS.sramedia_defaultstyles = EXT:sra_media/res/styles.css

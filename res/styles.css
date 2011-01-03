@@ -1,0 +1,164 @@
+#sra-media-pi1-searchtablepadding
+{
+  	padding-left:6px; 
+  	padding-right:25px;
+}
+#sra-media-pi1-searchtablenopadding
+{
+  	padding-left:0px; 
+  	padding-right:0px;
+}
+
+#sra-media-pi1-singletable
+{
+  	border-collapse: separate;
+  	width: 700px;
+  	border: 2px solid black;
+}
+#sra-media-pi1-singletable td
+{
+	text-align: left;
+	vertical-align: top;
+	empty-cells: show;
+  	padding-top:4px; 
+  	padding-bottom:4px; 
+  	padding-left:15px; 
+  	padding-right:15px;
+  	background-color: rgb(243,243,243);
+  	color: black;
+}
+
+
+#sra-media-pi1-listtable
+{
+  	border-collapse: separate;
+  	border: 2px solid black;
+  	width: 100%;
+}
+#sra-media-pi1-listtable td
+{
+	text-align: left;
+	vertical-align: top;
+	empty-cells: show;
+  	padding-top:4px; 
+  	padding-bottom:4px; 
+  	padding-left:7px; 
+  	padding-right:7px;
+  	color: black;
+}
+
+.sra-media-pi1 a:link { text-decoration:none; font-weight:bold; color:#e00000;}
+.sra-media-pi1 a:visited { text-decoration:none; font-weight:bold; color:#800000;}
+.sra-media-pi1 a:hover { text-decoration:none; font-weight:bold;}
+.sra-media-pi1 a:active { text-decoration:none; font-weight:bold;}
+.sra-media-pi1 a:focus { text-decoration:none; font-weight:bold;}
+.sra-media-pi1 .book-savemessage { color:#2945d5 }
+
+img{border:none;}
+
+.header{font-weight:bold;}
+
+/* header books */
+#sra-media-pi1-listtable-header
+{
+  	background-color: rgb(243,243,243);
+}
+/* availble books */
+#sra-media-pi1-listtable-status0
+{
+	background-color: rgb(191,234,194);
+}
+/* conferred books */
+#sra-media-pi1-listtable-status1 td
+{
+	background-color: rgb(235,190,191);
+}
+/* reserved books */
+#sra-media-pi1-listtable-status2 td
+{
+	background-color: rgb(252,255,121);
+}
+
+
+
+textarea.tx-sra-media-pi1-bibtex-textarea {
+	font-family:monospace;
+	margin-right:1em;
+	color: #333; 
+	border-color: #666;
+}
+
+
+div.tx-sramedia-pi1 div.add-medium table,
+div.tx-sramedia-pi1 div.add-medium select,
+div.tx-sramedia-pi1 div.add-medium textarea,
+div.tx-sramedia-pi1 div.add-medium input { font-size:100% }
+
+.hidden {
+	display:none;
+}
+
+div#book-selected-area table tr td,
+div#book-selected-area table tr th
+{
+	padding:0.25em;
+	vertical-align:top;
+	text-align:left;
+}
+
+div#book-selected-area table tr.odd {
+	background-color:#efefef;
+}
+
+div#book-selected-area table tr.even {
+	background-color:#ffffff;
+}
+
+tr#sra-media-person-resultlist {
+	color:#3e69a4;
+}
+
+td.person-result-cell {
+	color:#000000;
+	background-color:#b0cce0;
+	border:1px solid #3e69a4;
+}
+
+tr#sra-media-person-resultlist td {
+	vertical-align:top;
+}
+
+tr#sra-media-person-resultlist td ul li{
+	font-size:1.5em;
+}
+
+div.person-list-info {
+	padding:0.5em;
+	border:1px solid #3e69a4;
+}
+
+
+span.req {
+	color:#ff0000;
+}
+
+div.sra-mitarbeiter-list p {
+	font-weight:bold;
+	margin-top:10px;
+}
+
+div.sra-mitarbeiter-list ul {
+	margin:0px;
+}
+
+div.add-medium table tr td {
+	vertical-align:top;
+}
+
+.book-savemessage {
+  color:#1ea13a;
+}
+.book-errormessage {
+  color:#d42828;
+}
+

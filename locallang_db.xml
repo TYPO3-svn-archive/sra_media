@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension sra_media</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_sramedia_type">MyMedium</label>
+			<label index="tx_sramedia_category">Medium</label>
+			<label index="tx_sramedia_category.name">Name</label>
+			<label index="tx_sramedia_frequency">Erscheinungsweise</label>
+			<label index="tx_sramedia_frequency.name">Name</label>
+			<label index="tx_sramedia_context">Rubrik</label>
+			<label index="tx_sramedia_context.name">Name</label>
+			<label index="tx_sramedia_status">Status</label>
+			<label index="tx_sramedia_callnumber">Standort</label>
+			<label index="tx_sramedia_callnumber.name">Name</label>
+			<label index="tx_sramedia_status.name">Name</label>
+
+			<label index="tx_sramedia_books">Buch</label>
+			<label index="tx_sramedia_books.type">Medium</label>
+			<label index="tx_sramedia_books.isbn">ISBN</label>
+			<label index="tx_sramedia_books.signature">Signatur</label>
+			<label index="tx_sramedia_books.title">Titel</label>
+			<label index="tx_sramedia_books.subtitle">Untertitel</label>
+			<label index="tx_sramedia_books.invnr">InvNR</label>
+			<label index="tx_sramedia_books.author">Autor</label>
+			<label index="tx_sramedia_books.publisher">Verlag/Hrsg./Quelle</label>
+			<label index="tx_sramedia_books.callnumber">Standort</label>
+			<label index="tx_sramedia_books.category">Kategorie</label>
+			<label index="tx_sramedia_books.pubdate">Erscheinungsdatum</label>
+			<label index="tx_sramedia_books.frequency">Erscheinungsweise</label>
+			<label index="tx_sramedia_books.edition">Auflage</label>
+			<label index="tx_sramedia_books.context">Rubrik</label>
+			<label index="tx_sramedia_books.area">Themenbereich</label>
+			<label index="tx_sramedia_books.keywords">Schlsselwrter</label>
+			<label index="tx_sramedia_books.comment">Kommentar</label>
+			<label index="tx_sramedia_books.link">Pfad</label>
+			<label index="tx_sramedia_books.conferredto">verliehen an</label>
+			<label index="tx_sramedia_books.status">Status</label>
+			<label index="tx_sramedia_books.abo">Abo-Zeitraum</label>
+			<label index="tx_sramedia_books.pubyear">Erscheinungsjahr</label>
+			<label index="tx_sramedia_books.download">download</label>
+			<label index="tx_sramedia_books.conferredbegin">ausgeliehen am</label>
+			<label index="tx_sramedia_books.conferredend">ausgeliehen bis</label>
+			<label index="tx_sramedia_books.circulating_since">im Umlauf seit</label>
+			<label index="tx_sramedia_books.reminded">angemahnt</label>
+			<label index="tx_sramedia_books.reservedby">vorgemerkt von</label>
+			<label index="tx_sramedia_books.sraperson">SRA Mitarbeiter</label>
+			<label index="tx_sramedia_books.bibtex_type">Bibtex Literaturtyp</label>
+
+			<label index="tx_sramedia_books.address">Adresse</label>
+			<label index="tx_sramedia_books.bibtex_key">Bibtex Key</label>
+			<label index="tx_sramedia_books.booktitle">Buchtitel</label>
+			<label index="tx_sramedia_books.chapter">Kapitel</label>
+			<label index="tx_sramedia_books.editor">Editor</label>
+			<label index="tx_sramedia_books.howpublished">Howpublished</label>
+			<label index="tx_sramedia_books.institution">Institution</label>
+			<label index="tx_sramedia_books.journal">Journal</label>
+			<label index="tx_sramedia_books.month">Monat</label>
+			<label index="tx_sramedia_books.note">Notiz</label>
+			<label index="tx_sramedia_books.number">Nummer</label>
+			<label index="tx_sramedia_books.organization">Organisation</label>
+			<label index="tx_sramedia_books.pages">Seiten</label>
+			<label index="tx_sramedia_books.school">Schule</label>
+			<label index="tx_sramedia_books.series">Series</label>
+			<label index="tx_sramedia_books.volume">Volume</label>
+
+			
+			<label index="tx_sramedia_areas">Themenbereich</label>
+			<label index="tx_sramedia_areas.name">Name</label>
+			<label index="tx_sramedia_areas.signature">Signatur</label>
+			<label index="tx_sramedia_areas.sigautoinc">Autoincrement (Signatur Generierung)</label>
+			<label index="tx_sramedia_areas.invautoinc">Inventarnummer Autoincrement</label>
+			
+			<label index="tx_sramedia_types.type.I.0">Buch</label>
+			<label index="tx_sramedia_types.type.I.1">CD</label>
+			<label index="tx_sramedia_types.type.I.2">DVD</label>
+			<label index="tx_sramedia_types.type.I.3">SRA Publikation</label>
+
+			<label index="tx_sramedia_books.bibtex_type.0">Article</label>
+			<label index="tx_sramedia_books.bibtex_type.1">Book</label>
+			<label index="tx_sramedia_books.bibtex_type.2">Booklet</label>
+			<label index="tx_sramedia_books.bibtex_type.3">Conference</label>
+			<label index="tx_sramedia_books.bibtex_type.4">Inbook</label>
+			<label index="tx_sramedia_books.bibtex_type.5">Incollection</label>
+			<label index="tx_sramedia_books.bibtex_type.6">Inproceedings</label>
+			<label index="tx_sramedia_books.bibtex_type.7">Manual</label>
+			<label index="tx_sramedia_books.bibtex_type.8">Mastersthesis</label>
+			<label index="tx_sramedia_books.bibtex_type.9">Misc</label>
+			<label index="tx_sramedia_books.bibtex_type.10">Phdthesis</label>
+			<label index="tx_sramedia_books.bibtex_type.11">Proceedings</label>
+			<label index="tx_sramedia_books.bibtex_type.12">Techreport</label>
+			<label index="tx_sramedia_books.bibtex_type.13">Unpublished</label>
+			
+			<label index="tt_content.tx_sramedia_libcode.I.0">Suche</label>
+			<label index="tt_content.tx_sramedia_libcode.I.1">komplette Liste</label>
+			<label index="tt_content.tx_sramedia_libcode.I.2">Detailansicht</label>
+			<label index="tt_content.tx_sramedia_libcode.I.3">FE-Benutzer: entliehene Medien</label>
+			<label index="tt_content.tx_sramedia_libcode.I.4">FE-Benutzer: vorgemerkte Medien</label>
+			<label index="tt_content.tx_sramedia_libcode.I.5">FE-Benutzer: Verteilerlisten</label>
+			<label index="tt_content.tx_sramedia_libcode.I.6">Medium hinzufgen</label>
+			<label index="tt_content.tx_sramedia_libcode.I.7">Alle entliehenen Medien</label>
+			<label index="tx_sramedia_books.distributionlist">Verwaltung</label>
+			<label index="tt_content.list_type">SRA Bibliothek</label>
+
+			<label index="pi_flexform.sheet_general">Optionen</label>
+			<label index="pi_flexform.sheet_other">Verschiedenes</label>
+			<label index="pi_flexform.singleview">Detailansicht</label>
+			<label index="pi_flexform.choose_singlepage">Seite mit Detailansicht</label>
+			<label index="pi_flexform.view_mode">Ansicht</label>
+			<label index="pi_flexform.listview">Liste</label>
+			<label index="pi_flexform.alluserconferred">Alle Entleihungen</label>
+			<label index="pi_flexform.user_conferred">FE-Benutzer: entliehene Medien</label>
+			<label index="pi_flexform.searchform">Suchformular</label>
+			<label index="pi_flexform.addform">Eingabe Formular</label>
+			<label index="pi_flexform.addform_staff">Eingabe Formular Mitarbeiter</label>
+		</languageKey>
+	</data>
+</T3locallang>

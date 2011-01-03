@@ -1,0 +1,156 @@
+2010-12-13 V1.11.1
+- Inventarnummerliste und Signaturnummernliste fuer Eingabeformular
+- Inventarnummer als Pflichtfeld im Front-End
+
+2010-12-13 V1.11.0
+- Erweiterung des HTML Templates um die Inventarnummer Liste bei der
+Bucheingabe
+
+2010-5-14 V1.10.0
+- Eingabemaske für Mitarbeiter
+
+2010-6-1 V1.9.2
+- Eingabe Formular implementiert
+- Quellcode aufgeräumt
+
+2009-12-23 V1.9.1
+- File upload Limit auf 25MB begrenzt (vorher 1MB)
+- Book Datensätze auf Standardseiten erlaubt (allowTableOnStandardPages)
+
+2009-12-23 V1.9.0
+- Sicherer Download von PDF Dateien möglich
+
+2009-12-09 V1.8.6
+- Listenansicht wird erst angezeigt, wenn parameter "submit" gesetzt wurde
+-> dadurch wird nicht sofort die komplette Liste angezeigt, sondern erst, wenn 
+nach einem Medium gesucht wurde
+
+2009-12-09 V1.8.5
+- Bibtex Export in verschiedenen Sichten
+- "Alle Entleihungen" verwendet Listenansichtsklasse durch Instanziierung
+
+2009-12-09 V1.8.4
+2 neue Klassen erzeugt:
+- Ansicht "FE-User: alle Entleihungen" implementiert
+- Ansicht "Alle Entleihungen" implementiert
+
+2009-12-02 V1.8.3
+- Detailansicht verfeinert
+- Ausleihbutton
+
+2009-08-12 V1.8.1
+- Filter nach Mitarbeitern im Suchformular möglich, wenn nach SRA-Publikation gesucht wird
+
+2009-08-12 V1.8.0
+- SRA Publikationen als Typ
+- Verknüpfungen zu Mitarbeitern
+
+2009-07-01 kim V1.7.2
+- Safari Browser Kompatibilität
+- Maske wird nach Bucheintrag eingefroren
+
+2009-06-08 kim V1.7.1
+- benannte Keys in der ext_tables.sql
+
+Buch-hinzufügen:
+================
+- beim Klick auf einen Themenbereich wird eine Liste
+der Bücher aus diesem Themenbereich generiert
+
+2009-05-13 Kim
+- ISBN Suchfeld akzeptiert nun auch ISBN13 Eingaben
+- Aufruf der extract_description-Methode auskommentiert, da unzuverlässig
+
+2009-03-18 SRA (Ki-Hyoun Kim)
+	...
+
+2009-03-25
+- E-Mail Benachrichtigungen an Frau Lorenz rausgenommen
+
+2009-03-27 Version 1.3.0
+- Bibtex Ausgabe in der Detailansicht eines Buches
+- Buch Edition in der Detailansicht hinzugefügt
+
+2009-03-27 Version 1.4.0
+- Bibtex Datei senden Link für einzelne Bücher in der Detailansicht
+
+
+2009-03-27 Version 1.5.0
+- Bibtex Datei senden Link für Suchanfrage Ergebnisse
+
+2009-04-01 Version 1.6.0
+- Context, Category, Frequency und Status(neu, ..) entfernt
+
+2007-06-21 TAB GmbH (Markus Krause)  <typo3@tab-gmbh.de>
+- make it run with PHP4
+
+2006-11-03 TAB GmbH (Markus Krause)  <typo3@tab-gmbh.de>
+
+Global changes:
+- CSS-optimization of the output
+- New media type integrated: file
+- Buttons for the actions borrow, reserve and add to distribution list
+- separate database table for the call number
+- enhanced TYPO3-conformity
+- t3lib_div::GPvar replaced by t3lib_div::_GP 
+- MySQL functions replaced by TYPO3-DB-functions
+- GET-variables encoded with urlencode()
+
+
+DB tables:
+- added keys
+- some TEXT fields converted to CHAR fields
+- VARCHAR fields converted to CHAR fields with moderate sizes
+- putted down the size of TINYINT fields to one
+- removed default values from AUTO_INCREMENT fields
+
+
+New methods in class.tx_tabmedia_pi1.php:
+- change_conferredto()
+- change_distributionlist()
+- change_reservedby()
+- extract_description()
+- extract_language()
+- extract_publishinginformations()
+- extract_title_author()
+- get_from_www()
+- initCallnumber()
+- listallmedia()
+- listselectedmedia()
+- parse_htmlresults()
+- process_data()
+- searchWhereCatNotLike()
+- setoptions()
+- setoutput()
+- setsearchform()
+- show_sql_error()
+
+
+Plugin Complete List:
+- The status is now shown as text and table row background-color
+- Button instead of a text-link to get to the Single Record 
+- The number of displayed items can be set up by the user
+
+Plugin Search:
+- Adjustment of the search fields optimized
+- Number of shown search results variable
+- New search field: Status (conferred, prebooked, available)
+
+Plugin Single Record:
+- Confirmation of succeeded actions (borrow, reserve, add to distribution list and cancel)
+
+Plugin FE-User: Conferred Media:
+- Cancel Borrowing directly possible
+
+Plugin FE-User: Prebooked Media:
+- Cancel Reservation possible
+
+Plugin FE-User: Distribution List:
+- Remove from distribution list possible
+
+Plugin Add Medium:
+- Completely new integrated
+- Media can be entered from within the frontend
+- Book information can be loaded automatically via ISBN from www.amazon.de
+
+

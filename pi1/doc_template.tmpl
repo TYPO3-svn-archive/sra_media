@@ -1,0 +1,1024 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<TITLE>DOC example template</TITLE>
+</head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style type="text/css">
+</style>
+<body>
+
+<h3>TEMPLATE_LIST</h3>
+<em>This is the template for the list of DOC in the archive or DOC page or search.</em>
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- ###TEMPLATE_LIST### begin
+	This is the template for the list of DOC in the archive or DOC page or search
+-->
+<p><form method="post" action="">
+	<input type="hidden" name="tx_sramedia_pi1[export]" value="1" />
+###PIVARS_INPUT_VALUE###
+	<input type="submit" name="Bibtex exportieren" value="Bibtex exportieren" />
+</form></p>
+<p>
+
+<TABLE id='sra-media-pi1-listtable'>
+	<tr>
+		<td colspan="9">###BOOKSCOUNT###
+		</td>
+	</tr>
+
+	<tr id='sra-media-pi1-listtable-header'>
+		<td class="header">
+			<p>###HEADER_SIGNATURE###</p>
+		</td>
+
+		<td class="header">
+			<p>###HEADER_TITLE###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_AUTHOR###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_SRAPERSON###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_TYPE###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_AREA###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_PUBYEAR###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_NO###</p>
+		</td>
+		<td class="header">
+			<p>###HEADER_INFO###</p>
+		</td>
+	</tr>
+	<!-- ###CONTENT### begin
+		  This is the part of the template substituted with the list of DOC:
+	-->
+		<!-- ###DOC### begin
+			Template for a single item
+		-->
+			<tr id="###CSS-TR###">
+				<td>
+					<p>###BOOK_SIGNATURE###</p>
+				</td>
+				<td>
+					<p>###BOOK_TITLE###</p>
+				</td>
+				<td>
+					<p>###BOOK_AUTHOR###</p>
+				</td> 
+				<td>
+					<p>###BOOK_SRAPERSON### </p>
+				</td> 
+				<td>
+					<p>###BOOK_TYPE###</p>
+				</td>
+				<td>
+					<p>###BOOK_AREA###</p>
+				</td> 
+				<td>
+					<p>###BOOK_PUBYEAR###</p>
+				</td> 
+				<td>
+					<p>###BOOK_NO###</p>
+				</td>
+				<td>
+					<!--###LINK_ITEM###--><img src="typo3conf/ext/sra_media/icon_tx_sramedia_rightarrow.gif" height='15'><!--###LINK_ITEM###-->
+				</td>				           
+            </tr>
+		<!-- ###DOC### end-->
+	<!-- ###CONTENT###  end -->
+
+</TABLE>
+<!-- ###TEMPLATE_LIST### end -->
+
+
+<!-- ###TEMPLATE_STAFF_ADDMEDIUM### begin
+	This is the template for the conferred of DOC in the archive or DOC page or search
+-->
+
+
+<div class="add-medium">
+<!-- ###DOC### begin
+			Template for a single item
+		-->
+###BOOK_SAVEMESSAGE###
+
+<noscript>Hinweis: Um das Eingabeformular richtig benutzen zu k&ouml;nnen, müssen Sie Javascript in Ihrem Browser aktiviert haben.</noscript>
+
+<FORM id="sramedia-addform" enctype="multipart/form-data" action='' method='POST'>
+<TABLE cellpadding="3" cellspacing="0" border="0">
+	<tr id="person-list-info">
+		<td colspan="2">
+			<div class="person-list-info"><b>Info: </b>Verwenden Sie die Personen Auswahlbox mehrmals, um mehrere Personen auszuw&auml;hlen. Die Personen werden automatisch zu den bereits ausgew&auml;hlten Personen hinzugef&uuml;gt. Um Personen wieder zu entfernen, klicken
+			Sie auf den "entfernen" Link neben der Person, die wieder entfernt werden soll.<br />
+			Doppelte Eintr&auml;ge bedeuten, dass f&uuml;r die Person eine &Uuml;bersetzung existiert. Verlinken Sie die Publikation f&uuml;r die Person in beiden Sprachen, indem Sie beide Personen hinzuf&uuml;gen.
+			</div>
+		</td>
+	</tr>
+	<tr id="sra-media-person-row" >
+		<td class="header">
+			###HEADER_PERSON###
+		</td>
+		<td>
+			<select id="sra-media-person-select" onChange="addPerson()">
+			<!-- ###PERSONOPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCPERSON### begin			Template for a single item		-->
+					<option value='###PERSON_UID###'>###PERSON_NAME###</option>
+				<!-- ###DOCPERSON### end-->
+			<!-- ###PERSONOPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+	<tr id="sra-media-person-resultlist" class="###PERSON_RESULTLIST_CLASS###">
+		<td class="header" style="vertical-align:top">
+			###HEADER_PERSONRESULT###
+		</td>
+		<td class="person-result-cell">
+			<div id="sra-media-person-list-container" class="###PERSON_CONTAINER_CLASS###">
+				<ul id="sra-media-person-list">###PERSON_ITEMS###</ul>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_TITLE###<span class="req">*</span>
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[title]' value='###BOOK_TITLE###'>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="header">
+			###HEADER_BIBTEX_TYPE###
+		</td>
+		<td>
+			<select name='tx_sramedia_pi1[bibtex_type]'>
+			<!-- ###BIBTEXOPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCBIBTEX### begin			Template for a single item		-->
+					<option value='###OPTION_VALUE###' ###OPTION_SELECTED###>###OPTION_TITLE###</option>
+				<!-- ###DOCBIBTEX### end-->
+			<!-- ###BIBTEXOPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<td class="header">
+			###HEADER_SUBTITLE###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[subtitle]' value='###BOOK_SUBTITLE###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_AUTHOR###<span class="req">*</span>
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[author]' value='###BOOK_AUTHOR###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_LANGUAGE###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[language]' value='###BOOK_LANGUAGE###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_PUBLISHER###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[publisher]' value='###BOOK_PUBLISHER###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_EDITION###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[edition]' value='###BOOK_EDITION###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_PUBYEAR###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[pubyear]' value='###BOOK_PUBYEAR###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_DOWNLOAD###
+		</td>
+		<td>
+			<input type='file' size='45' name='tx_sramedia_pi1[download]' value='###BOOK_DOWNLOAD###'>
+		</td>
+
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_COMMENT###
+		</td>
+		<td>
+			<textarea cols='35' rows='8' name='tx_sramedia_pi1[comment]' html="true" wysiwyg="false">###BOOK_COMMENT###</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+			<input type='submit' value='###SAVE_BUTTON###'>
+		</td>
+	</tr>
+	</tr>
+</FORM>
+</TABLE><BR>
+<p<b>!</b> Die mit einem <span class="req">*</span> markierten Felder sind Pflichtfelder und m&uuml;ssen ausgef&uuml;llt werden.</p>
+
+<!-- ###DOC### end-->
+
+</div>
+
+<!-- ###TEMPLATE_STAFF_ADDMEDIUM### end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ###TEMPLATE_USER_ADDMEDIUM### begin
+	This is the template for the conferred of DOC in the archive or DOC page or search
+-->
+
+
+<div class="add-medium">
+<!-- ###DOC### begin
+			Template for a single item
+		-->
+###BOOK_SAVEMESSAGE###
+
+<noscript>Hinweis: Um das Eingabeformular richtig benutzen zu k&ouml;nnen, müssen Sie Javascript in Ihrem Browser aktiviert haben.</noscript>
+<FORM  action='' method='POST'>
+<TABLE cellpadding="3" cellspacing="0" border="0">
+	<tr>
+		<td class="header">
+			###HEADER_ISBN###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[isbn]' value='###BOOK_ISBN###'>
+		</td>
+		<td>
+			<input type='hidden' name='tx_sramedia_pi1[search]' value='go'>
+			<input type='submit' value='###SEARCH_BUTTON###'>
+		</td>
+	</tr>
+</table>
+</FORM>
+
+<FORM id="sramedia-addform" enctype="multipart/form-data" action='' method='POST'>
+<TABLE cellpadding="3" cellspacing="0" border="0">
+	<tr>
+		<td class="header">
+			###HEADER_NO###<span class="req">*</span>
+		</td>
+		<td>
+			<select name='tx_sramedia_pi1[callnumber]'>
+			<!-- ###CALLNUMBEROPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCCALLNUMBER### begin			Template for a single item		-->
+					<option value='###OPTION_ID###' ###OPTION_SELECTED###>###OPTION_NAME###</option>
+				<!-- ###DOCCALLNUMBER### end-->
+			<!-- ###CALLNUMBEROPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_TYPE###<span class="req">*</span>
+		</td>
+		<td>
+			<select id="sra-media-type-select" onChange="checkOptionId()" name='tx_sramedia_pi1[sra_type]'>
+			<!-- ###TYPEOPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCTYPE### begin			Template for a single item		-->
+					<option value='###OPTION_ID###' ###OPTION_SELECTED###>###OPTION_NAME###</option>
+				<!-- ###DOCTYPE### end-->
+			<!-- ###TYPEOPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+	<tr id="person-list-info" class="###PERSON_INFO_CLASS###">
+		<td colspan="2">
+			<div class="person-list-info"><b>Info: </b>Verwenden Sie die Personen Auswahlbox mehrmals, um mehrere Personen auszuw&auml;hlen. Die Personen werden automatisch zu den bereits ausgew&auml;hlten Personen hinzugef&uuml;gt. Um Personen wieder zu entfernen, klicken
+			Sie auf den "entfernen" Link neben der Person, die wieder entfernt werden soll.<br />
+			Doppelte Eintr&auml;ge bedeuten, dass f&uuml;r die Person eine &Uuml;bersetzung existiert. Verlinken Sie die Publikation f&uuml;r die Person in beiden Sprachen, indem Sie beide Personen hinzuf&uuml;gen.
+			</div>
+		</td>
+	</tr>
+	<tr id="sra-media-person-row" class="###PERSON_ROW_CLASS###">
+		<td class="header">
+			###HEADER_PERSON###
+		</td>
+		<td>
+			<select id="sra-media-person-select" onChange="addPerson()">
+			<!-- ###PERSONOPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCPERSON### begin			Template for a single item		-->
+					<option value='###PERSON_UID###'>###PERSON_NAME###</option>
+				<!-- ###DOCPERSON### end-->
+			<!-- ###PERSONOPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+	<tr id="sra-media-person-resultlist" class="###PERSON_RESULTLIST_CLASS###">
+		<td class="header" style="vertical-align:top">
+			###HEADER_PERSONRESULT###
+		</td>
+		<td class="person-result-cell">
+			<div id="sra-media-person-list-container" class="###PERSON_CONTAINER_CLASS###">
+				<ul id="sra-media-person-list">###PERSON_ITEMS###</ul>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_TITLE###<span class="req">*</span>
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[title]' value='###BOOK_TITLE###'>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td class="header">
+			###HEADER_SUBTITLE###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[subtitle]' value='###BOOK_SUBTITLE###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_AUTHOR###<span class="req">*</span>
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[author]' value='###BOOK_AUTHOR###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_LANGUAGE###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[language]' value='###BOOK_LANGUAGE###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_PUBLISHER###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[publisher]' value='###BOOK_PUBLISHER###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_EDITION###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[edition]' value='###BOOK_EDITION###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_PUBYEAR###
+		</td>
+		<td>
+			<input type='text' size='45' name='tx_sramedia_pi1[pubyear]' value='###BOOK_PUBYEAR###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_DOWNLOAD###
+		</td>
+		<td>
+			<input type='file' size='45' name='tx_sramedia_pi1[download]' value='###BOOK_DOWNLOAD###'>
+		</td>
+
+	</tr>
+	<tr class="area-info">
+		<td>&nbsp;</td>
+		<td>
+			<div class="area-info"><b>Info: </b>Nach der Auswahl eines Themenbereiches wird unter dem Formular eine Tabelle der bereits eingetragenen B&uuml;cher generiert aus dem jeweiligen Themenbereich. Die Tabelle ist chronologisch sortiert. Das zuletzt eingegebene Buch erscheint am Anfang der Tabelle.
+						</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_AREA###<span class="req">*</span>
+		</td>
+		<td>
+			<select id="sra-media-areaselect" onkeyup="showArea();" onchange="showArea();" name='tx_sramedia_pi1[area]'>
+			<option value=''>Bitte ausw&auml;hlen...</option>
+			<!-- ###AREAOPTIONS### begin		  This is the part of the template substituted with the list of DOC:	-->
+				<!-- ###DOCAREA### begin			Template for a single item		-->
+					<option value='###OPTION_ID###' ###OPTION_SELECTED###>###OPTION_SHORTNAME### (###OPTION_NAME###)</option>
+				<!-- ###DOCAREA### end-->
+			<!-- ###AREAOPTIONS###  end -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_SIGNATURE###<span class="req">*</span>
+		</td>
+		<td>
+		<p>Bitte von Hand eintragen (Tabelle, siehe unten):
+<ul>
+			<li><i>Signatur-k&uuml;rzel + fortlaufende Nummer</i><br />Beispiel: <b>BS41</b> (Betriebssysteme, 41. Eintrag)</li>
+			<li><i>Signatur-k&uuml;rzel + 2stelliges Jahr + Minuszeichen + fortlaufende Nummer</i><br />Beispiel: <b>BA06-1</b> (Bachelorarbeiten, 2006, 1. Eintrag)</li>
+			</ul>
+
+			</p>
+			<input id="next_signature" type='text' size='45' name='tx_sramedia_pi1[signature]' value='###BOOK_SIGNATURE###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_SIGNATURE_LOOKUPTABLE###
+		</td>
+		<td>
+			<textarea id="signature_lookuptable" name="signature_lookuptable" cols="90" style="font-size:0.8em" rows="20" readonly="readonly">Bitte Themenbereich selektieren (s.o.)</textarea>	
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_INVNR###<span class="req">*</span>
+		</td>
+		<td>
+			<input id="next_inv" type='text' size='45' name='tx_sramedia_pi1[invnr]' value='###BOOK_INVNR###'>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_INVNR_LOOKUPTABLE###
+		</td>
+		<td>
+			<textarea name="invnr_lookuptable" cols="90" style="font-size:0.8em" rows="20" readonly="readonly">###INVNR_LOOKUPTABLE###</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			###HEADER_COMMENT###
+		</td>
+		<td>
+			<textarea cols='35' rows='8' name='tx_sramedia_pi1[comment]' html="true" wysiwyg="false">###BOOK_COMMENT###</textarea>
+		</td>
+	</tr>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+			<input type='submit' value='###SAVE_BUTTON###'>
+		</td>
+	</tr>
+	</tr>
+</FORM>
+</TABLE><BR>
+<p<b>!</b> Die mit einem <span class="req">*</span> markierten Felder sind Pflichtfelder und m&uuml;ssen ausgef&uuml;llt werden.</p>
+
+<!-- ###DOC### end-->
+
+<div id="book-selected-area" class="hidden">
+	<!-- ###HIDDEN_BOOKS_LIST### begin
+		Wenn ein Themenbereich angeklickt wurde, wird die entsprechende Buchliste des
+		Themenbereichs sichtbar gemacht.
+	-->
+	<div id="tx-sramedia-area###AREAID###" class="###CLASS_AREA###">
+Themenbereich: ###AREA###
+=========================================================================
+<!-- ###HIDDEN_BOOKS_ITEMS### -->###CRDATE### [###SIGNATURE###] ###TITLE###
+<!-- ###HIDDEN_BOOKS_ITEMS### -->
+	</div>
+	<!-- ###HIDDEN_BOOKS_LIST### -->
+</div>
+</div>
+<!-- ###TEMPLATE_USER_ADDMEDIUM### end -->
+
+
+
+<!-- ###TEMPLATE_USER_DLIST### begin
+	This is the template for the conferred of DOC in the archive or DOC page or search
+-->
+<p>
+<TABLE id='sra-media-pi1-listtable'>
+	<tr id='sra-media-pi1-listtable-header'>
+		<td class="header">
+			###HEADER_TITLE###
+		</td>
+		<td class="header">
+			###HEADER_AUTHOR###
+		</td>
+		<td class="header">
+			###HEADER_TYPE###
+		</td>
+		<td class="header">
+			###HEADER_NO###
+		</td>
+		<td class="header">
+		</td>
+		<td class="header">
+		</td>
+	</tr>
+	<!-- ###CONTENT### begin
+		  This is the part of the template substituted with the list of DOC:
+	-->
+		<!-- ###DOC### begin
+			Template for a single item
+		-->
+			<tr id='###CSS-TR###'>
+				<td>
+					###BOOK_TITLE###
+				</td>
+				<td>
+					###BOOK_AUTHOR###
+				</td> 
+				<td>
+					###BOOK_TYPE###
+				</td>
+				<td>
+					###BOOK_NO###
+				</td>  
+				<td>
+					###BOOK_LIST###
+				</td>   
+				<td>
+					<!--###LINK_ITEM###--><img src="typo3conf/ext/sra_media/icon_tx_sramedia_rightarrow.gif" height='15'><!--###LINK_ITEM###-->
+				</td>	        
+            </tr>
+		<!-- ###DOC### end-->
+	<!-- ###CONTENT###  end -->
+</TABLE><BR>
+<!-- ###TEMPLATE_USER_DLIST### end -->
+
+
+
+<!-- ###TEMPLATE_USER_RESERVED### begin
+	This is the template for the conferred of DOC in the archive or DOC page or search
+-->
+<p>
+<TABLE id='sra-media-pi1-listtable'>
+	<tr id='sra-media-pi1-listtable-header'>
+		<td class="header">
+			###HEADER_TITLE###
+		</td>
+		<td class="header">
+			###HEADER_AUTHOR###
+		</td>
+		<td class="header">
+			###HEADER_TYPE###
+		</td>
+		<td class="header">
+			###HEADER_NO###
+		</td>
+		<td class="header">
+		</td>   
+		<td class="header">
+		</td> 
+	</tr>
+	<!-- ###CONTENT### begin
+		  This is the part of the template substituted with the list of DOC:
+	-->
+		<!-- ###DOC### begin
+			Template for a single item
+		-->
+			<tr id='###CSS-TR###'>
+				<td>
+					###BOOK_TITLE###
+				</td>
+				<td>
+					###BOOK_AUTHOR###
+				</td> 
+				<td>
+					###BOOK_TYPE###
+				</td>
+				<td>
+					###BOOK_NO###
+				</td>    
+				<td>
+					###BOOK_RESERVE###
+				</td> 
+				<td>
+					<!--###LINK_ITEM###--><img src="typo3conf/ext/sra_media/icon_tx_sramedia_rightarrow.gif" height='15'><!--###LINK_ITEM###-->
+				</td>	         
+            </tr>
+		<!-- ###DOC### end-->
+	<!-- ###CONTENT###  end -->
+</TABLE><BR>
+<!-- ###TEMPLATE_USER_RESERVED### end -->
+
+
+
+<!-- ###TEMPLATE_USER_CONFERRED### begin
+	This is the template for the conferred of DOC in the archive or DOC page or search
+-->
+<p>
+<TABLE  id='sra-media-pi1-listtable'>
+	<tr id='sra-media-pi1-listtable-header'>
+		<td class="header">
+			###HEADER_SIGNATURE###
+		</td>
+
+		<td class="header">
+			###HEADER_TITLE###
+		</td>
+		<td class="header">
+			###HEADER_AUTHOR###
+		</td>
+		<td class="header">
+			###HEADER_TYPE###
+		</td>
+		<td class="header">
+			###HEADER_AREA###
+		</td>
+		<td class="header">
+			###HEADER_PUBYEAR###
+		</td>
+		<td class="header">
+			###HEADER_NO###
+		</td>
+		<td class="header">
+		    ###HEADER_BORROW_TO###
+		</td>   
+		<td class="header">
+		</td> 
+	</tr>
+	<!-- ###CONTENT### begin
+		  This is the part of the template substituted with the list of DOC:
+	-->
+		<!-- ###DOC### begin
+			Template for a single item
+		-->
+			<tr id='###CSS-TR###'>
+				<td>
+					###BOOK_SIGNATURE###
+				</td>
+				<td>
+					###BOOK_TITLE###
+				</td>
+				<td>
+					###BOOK_AUTHOR###
+				</td> 
+				<td>
+					###BOOK_TYPE###
+				</td>
+				<td>
+					###BOOK_AREA###
+				</td> 
+				<td>
+					###BOOK_PUBYEAR###
+				</td> 
+				<td>
+					###BOOK_NO###
+				</td>
+				<td>
+				    ###BOOK_FEUSER###
+				</td>   
+				<td>
+					<!--###LINK_ITEM###--><img src="typo3conf/ext/sra_media/icon_tx_sramedia_rightarrow.gif" height='15'><!--###LINK_ITEM###-->
+				</td>             
+            </tr>
+		<!-- ###DOC### end-->
+	<!-- ###CONTENT###  end -->
+</TABLE><BR>
+<!-- ###TEMPLATE_USER_CONFERRED### end -->
+
+
+
+<BR><BR><BR><BR><HR><BR><BR><BR>
+<h3>TEMPLATE_SINGLE</h3>
+<em>This subpart is used to display single DOC items</em><br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_SINGLE_0### begin
+	This subpart is used to display single book items
+-->
+###BOOK_CONFIRMACTION###
+<br>
+<table id='sra-media-pi1-singletable'>
+	<tr>
+		<td class='header'>
+			###HEADER_NO###
+		</td>
+		<td>
+			###BOOK_NO###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_SIGNATURE###
+		</td>
+		<td>
+			###BOOK_SIGNATURE###
+		</td>
+	</tr>
+
+	<tr>
+		<td class='header'>
+			###HEADER_INVNR###
+		</td>
+		<td>
+			###BOOK_INVNR###
+		</td>
+	</tr>
+
+	<tr>
+		<td class='header'>
+			###HEADER_TITLE###
+		</td>
+		<td>
+			###BOOK_TITLE###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_SUBTITLE###
+		</td>
+		<td>
+			###BOOK_SUBTITLE###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_TYPE###
+		</td>
+		<td>
+			###BOOK_TYPE###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_AUTHOR###
+		</td>
+		<td>
+			###BOOK_AUTHOR###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_PUBLISHER###
+		</td>
+		<td>
+			###BOOK_PUBLISHER###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_PUBYEAR###
+		</td>
+		<td>
+			###BOOK_PUBYEAR###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_EDITION###
+		</td>
+		<td>
+			###BOOK_EDITION###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_AREA###
+		</td>
+		<td>
+			###BOOK_AREA###
+		</td>
+	</tr>
+
+	<tr>
+		<td class='header'>
+			###HEADER_COMMENT###
+		</td>
+		<td>
+			###BOOK_COMMENT###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_DOWNLOAD###
+		</td>
+		<td>
+			###BOOK_DOWNLOAD###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_LINK###
+		</td>
+		<td>
+			###BOOK_LINK###
+		</td>
+	</tr>
+	<tr>
+		<td class='header'>
+			###HEADER_STATUS###
+		</td>
+		<td>
+			###BOOK_STATUS_SINGLE###  
+			<br>
+			###BOOK_RESERVE###		
+			###BOOK_BORROW###
+		</td>
+	</tr>
+</table>
+<h2>###BIBTEX_LOGO### Ausgabe</h2>
+<p><!--###DOWNLOAD_LINK_ITEM###--> ###DOWNLOAD_LOGO### <!--###DOWNLOAD_LINK_ITEM###--></p>
+<textarea class="tx-sra-media-pi1-bibtex-textarea" cols="80" rows="20">###BIBTEX_BOOK###</textarea>
+
+<p>
+
+<!--###LINK_ITEM###-->###BACK_LINK###<!--###LINK_ITEM###-->
+
+<br>&nbsp;
+<!-- ###TEMPLATE_SINGLE_0### end -->
+
+
+<!-- ###TEMPLATE_BIBTEX_BOOK### begin
+	This subpart is used to generate single book items with BibTex formatting
+-->
+@book{###BOOK_SIGNATURE###,
+    author    = {###BOOK_AUTHOR###},
+    title     = {###BOOK_TITLE###},
+    publisher = {###BOOK_PUBLISHER###},###BIBTEX_BOOK_VOLUME######BIBTEX_BOOK_NUMBER######BIBTEX_BOOK_SERIES######BIBTEX_BOOK_ADDRESS######BIBTEX_BOOK_EDITION######BIBTEX_BOOK_MONTH######BIBTEX_BOOK_NOTE###
+    year      = {###BOOK_PUBYEAR###}
+}
+<!-- ###TEMPLATE_BIBTEX_BOOK### end -->
+
+<!-- ###TEMPLATE_BIBTEXEXPORT### begin -->
+<!-- ###CONTENT### -->
+@###ENTRY_TYPE###{###BIBTEX_KEY###,
+<!-- ###FIELDS_TO_DISPLAY### -->###ISNEXT######FIELD_HEADER### = {###FIELD_VALUE###}<!-- ###FIELDS_TO_DISPLAY### -->
+}
+<!-- ###CONTENT### -->
+<!-- ###TEMPLATE_BIBTEXEXPORT### end -->
+
+
+<!-- ###TEMPLATE_DETAILVIEW### -->
+	<!-- ###FORM### -->
+		<form action="###URL###" method="post">
+			<input type="hidden" name="tx_sramedia_pi1[action]" value="###ACTION###" />
+			<input type="hidden" name="tx_sramedia_pi1[submit]" value="submit" />
+			<input type="submit" value="###BUTTON###" />
+		</form>
+	<!-- ###FORM### -->
+<table>
+	<!-- ###FIELDROW### -->
+	<tr>
+		<td><p>###FIELD_HEADER###</p></td>
+		<td><p>###FIELD_VALUE###</p></td>
+	</tr>
+	<!-- ###FIELDROW### -->
+</table>
+<!-- ###TEMPLATE_DETAILVIEW### -->
+
+
+
+<BR><BR><BR><BR><HR><BR><BR><BR>
+<h3>TEMPLATE_SEARCH</h3>
+<em>Subpart for the search-form.</em><br>
+<br>
+<br>
+
+<!-- ###TEMPLATE_SEARCH### begin
+	Subpart for the search-form
+-->
+<noscript><b>Hinweis:</b> In Ihrem Browser ist Javascript deaktiviert. Bitte aktivieren Sie Javascript in Ihrem Browser, um die Suche korrekt verwenden zu k&ouml;nnen.</noscript>
+<FORM method="post" action="###FORM_URL###">
+<input type=hidden name="tx_sramedia_pi1[begin_at]" value="">
+<table>
+	<tr>
+		<td id='sra-media-pi1-searchtablenopadding'>
+			###SEARCH_PHRASE###
+		</td>
+		<td id='sra-media-pi1-searchtablepadding'>
+			<INPUT size="20" maxlength="100" type="text" name="tx_sramedia_pi1[swords]" value="###SWORDS###">
+		</td>
+	</tr>
+	<tr>
+		<td id='sra-media-pi1-searchtablenopadding'>
+			###SEARCH_TYPE###
+		</td>
+		<td id='sra-media-pi1-searchtablepadding'>
+			<select id="sra-media-type-select" size=1 onChange="showPersonSelect()" name="tx_sramedia_pi1[sra_type]">
+				<option value="-1"></option>
+			<!-- ###TYPE_OPTIONS### -->
+				<option value="###TYPE_VALUE###" ###SELECTED###>###TYPE_NAME###</option>
+			<!-- ###TYPE_OPTIONS### -->
+			</select>
+		</td>
+	</tr>
+	<tr id="sra-media-person-select-row" class="###PERSON_ROW_CLASS###">
+		<td id="sra-media-pi1-searchtablenopadding">
+			###SEARCH_PERSON###
+		</td>
+		<td id="sra-media-pi1-searchtablepadding">
+			<select size=1 name="tx_sramedia_pi1[sra_person]">
+				<option value="-1"></option>
+			<!-- ###PERSON_OPTIONS### -->
+				<option value="###PERSON_ID###" ###SELECTED###>###PERSON_NAME###</option>
+			<!-- ###PERSON_OPTIONS### -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td id='sra-media-pi1-searchtablenopadding'>
+			###SEARCH_AREA###
+		</td>
+		<td id='sra-media-pi1-searchtablepadding'>
+			<select size=1 name="tx_sramedia_pi1[sra_area]">
+				<option value="-1"></option>
+			<!-- ###AREA_OPTIONS### -->
+				<option value="###AREA_ID###" ###SELECTED###>###AREA_NAME###</option>
+			<!-- ###AREA_OPTIONS### -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td id='sra-media-pi1-searchtablenopadding'>
+			###SEARCH_STATUS###
+		</td>
+		<td id='sra-media-pi1-searchtablepadding'>
+			<select size=1 name="tx_sramedia_pi1[sra_status]">
+				<option value="-1"></option>
+				<!-- ###STATUS_OPTIONS### -->
+				<option value="###STATUS_VALUE###" ###SELECTED###>###STATUS_NAME###</option>
+				<!-- ###STATUS_OPTIONS### -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td id='sra-media-pi1-searchtablenopadding'>
+			###SEARCH_CALLNUMBER###
+		</td>
+		<td id='sra-media-pi1-searchtablepadding'>
+			<select size=1 name="tx_sramedia_pi1[sra_callnumber]">
+				<option value="-1"></option>
+				<!-- ###CALLNUMBER_OPTIONS### -->
+				<option value="###CN_ID###" ###SELECTED###>###CN_NAME###</option>
+				<!-- ###CALLNUMBER_OPTIONS### -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 id='sra-media-pi1-searchtablenopadding'>
+			<input type='hidden' name='tx_sramedia_pi1[limit]' value='###LIMIT###'>
+			<input type="Submit" name="tx_sramedia_pi1[submit]" value="###SEARCH_BUTTON###">
+		</td>
+	</tr>
+</table>
+</form>
+<br>
+<!-- ###TEMPLATE_SEARCH### end -->
+
+
+<!-- ###ITEM_SEARCH_EMPTY### begin
+	Show, if list is empty
+-->
+<br>
+###EMPTY###
+
+<!-- ###ITEM_SEARCH_EMPTY### end -->
+
+</BODY>
+</HTML>
