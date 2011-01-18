@@ -25,15 +25,6 @@
 
 
 #
-# Table structure for table 'tt_content'
-#
-CREATE TABLE tt_content (
-    tx_sramedia_libcode INT(11) UNSIGNED DEFAULT '0' NOT NULL
-);
-
-
-
-#
 # Table structure for table 'tx_sramedia_callnumber'
 #
 CREATE TABLE tx_sramedia_callnumber (
@@ -49,15 +40,6 @@ CREATE TABLE tx_sramedia_callnumber (
 	PRIMARY KEY (uid),
 	KEY parent (pid)
 );
-
-#
-# Table structure for table 'tx_sramedia_invnr'
-#
-CREATE TABLE tx_sramedia_invnr (
-	uid INT(11) UNSIGNED DEFAULT '0' NOT NULL,
-	lastinv INT(11) UNSIGNED DEFAULT '0' NOT NULL,
-);
-
 
 #
 # Table structure for table 'tx_sramedia_books'
